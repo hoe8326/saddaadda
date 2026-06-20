@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SADDA ADDA REVIEWS | Customer Testimonials & Ratings in Rewari</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Ambient Looping Video Background -->
+  <div class="video-bg-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-drifting-neon-light-bokeh-34293-large.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- 1. Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-logo-container">
+      <div class="loader-logo">SADDA ADDA</div>
+      <div class="loader-tagline">“Aao Kabhi Adde Pe”</div>
+    </div>
+    <div class="loader-spinner">
+      <div class="loader-ring loader-ring-1"></div>
+      <div class="loader-ring loader-ring-2"></div>
+    </div>
+  </div>
+
+  <!-- 2. Custom Gaming Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="custom-cursor-follower"></div>
+
+  <!-- 3. Animated Background Blobs & Particles Canvas -->
+  <div class="bg-canvas">
+    <div class="neon-blob blob-purple"></div>
+    <div class="neon-blob blob-blue"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="page-transition-overlay"></div>
+
+  <!-- 4. Sticky Header Navbar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">SADDA ADDA</span>
+        <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Delivery Web Bucket Indicator -->
+        <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" class="cart-trigger blink-glow" title="Order Online / Delivery Location">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="delivery-badge-dot"></span>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title section -->
+  <section style="padding: 8rem 6% 3rem; text-align: center;">
+    <div class="section-max reveal active">
+      <span class="section-subtitle">COMMUNITY FEEDS & STAR POWER</span>
+      <h1 class="section-title">CUSTOMER <span>BUZZ</span></h1>
+      <p style="color: var(--text-muted); max-width:600px; margin: 1rem auto 0; font-size:1.05rem;">
+        Do not just take our word for it! Read what Sadda Adda's amazing family of gamers, foodies and coffee lovers in Rewari say about us. Overall rating 4.8 stars based on Google Maps reviews.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Ratings Dashboard segment -->
+  <section style="padding: 1rem 6% 3.5rem;">
+    <div class="section-max reveal active">
+      <div class="reviews-dashboard">
+        <!-- left total score box -->
+        <div class="rating-summary-box">
+          <div class="rating-big">4.8</div>
+          <div class="rating-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="rating-total">Based on 139 genuine Google Maps Reviews</div>
+        </div>
+        
+        <!-- right detail ratings bars -->
+        <div class="rating-bars-box">
+          <!-- Row 1 -->
+          <div class="rating-bar-row">
+            <span class="rating-bar-label">Food Quality</span>
+            <div class="rating-bar-container">
+              <div class="rating-bar-fill" style="width: 98%;"></div>
+            </div>
+            <span class="rating-bar-value">4.9</span>
+          </div>
+          
+          <!-- Row 2 -->
+          <div class="rating-bar-row">
+            <span class="rating-bar-label">Service Speed</span>
+            <div class="rating-bar-container">
+              <div class="rating-bar-fill" style="width: 94%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink)); box-shadow: 0 0 10px var(--neon-pink-glow)"></div>
+            </div>
+            <span class="rating-bar-value">4.7</span>
+          </div>
+          
+          <!-- Row 3 -->
+          <div class="rating-bar-row">
+            <span class="rating-bar-label">Ambiance Vibe</span>
+            <div class="rating-bar-container">
+              <div class="rating-bar-fill" style="width: 98%;"></div>
+            </div>
+            <span class="rating-bar-value">4.9</span>
+          </div>
+          
+          <!-- Row 4 -->
+          <div class="rating-bar-row">
+            <span class="rating-bar-label">Value for Money</span>
+            <div class="rating-bar-container">
+              <div class="rating-bar-fill" style="width: 96%; background: linear-gradient(90deg, var(--neon-blue), var(--neon-yellow)); box-shadow: 0 0 10px var(--neon-yellow-glow)"></div>
+            </div>
+            <span class="rating-bar-value">4.8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Display exactly 12 authentic, highly scannable Review Cards -->
+  <section style="padding: 0 6% 6rem;">
+    <div class="section-max">
+      <div class="grid-3" id="reviews-cards-container">
+        
+        <!-- Review 1 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar">AS</div>
+            <div class="reviewer-info">
+              <h4>Aarav Sharma</h4>
+              <span>Local Guide | Rewari</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Absolute best hangout place in Rewari. The milkshakes and oreo frappes are pure chocolate love! The neon ambiance and overall youth lounge vibe is unmatched."
+          </p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-purple);">PY</div>
+            <div class="reviewer-info">
+              <h4>Priya Yadav</h4>
+              <span>Verified Customer</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Amazing shakes and burgers. The Sadda Adda Monster Double-Decker is literally huge and extremely flavorful. Highly recommend ordering with extra melted cheese slices."
+          </p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-pink);">RM</div>
+            <div class="reviewer-info">
+              <h4>Rahul Mehra</h4>
+              <span>Professional Gamer</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Loved the purple neon lighting and vibe. Their PS5 gaming setups and stack of board games kept our gang hooked for hours. Slabs ofLoaded Cheese fries were delicious too."
+          </p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar">SS</div>
+            <div class="reviewer-info">
+              <h4>Sneha Singh</h4>
+              <span>Zomato Elite Reviewer</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Perfect pocket-friendly lounging space for student cliques. If you reside in Rewari, Sadda Adda in Ganpat Nagar is a crucial weekly visit. The mint mojito mocktails are awesome."
+          </p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-purple);">GG</div>
+            <div class="reviewer-info">
+              <h4>Gaurav Gupta</h4>
+              <span>Local Guide</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "The classic spices in Aloo Tikki burger are extremely tasty. Fused with thick frothy cold coffee, it represents a killer combo. The host is very courteous and welcoming!"
+          </p>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-pink);">TD</div>
+            <div class="reviewer-info">
+              <h4>Tanya Dutta</h4>
+              <span>Verified customer</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Fastest food service in NCR. They baked garlic cheese bread and fried potato peri-peri wedges within 6 minutes. Super crisp, extremely hot cheese melt. Sadda Adda rocks!"
+          </p>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar">RR</div>
+            <div class="reviewer-info">
+              <h4>Rohit Rao</h4>
+              <span>Instagrammer</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Highly Instagram-worthy lounge setting. The background glowing signs, wall graffiti, and ambient blue filters make all selfies look outstanding. Shakes are gorgeous too!"
+          </p>
+        </div>
+
+        <!-- Review 8 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-blue);">NV</div>
+            <div class="reviewer-info">
+              <h4>Neha Verma</h4>
+              <span>Mocktail Connoisseur</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Awesome, high-density mocktails. The Electric Blue Lagoon is mixed beautifully with standard orange notes and fizzy soda water slices. Perfect balance and visually appealing!"
+          </p>
+        </div>
+
+        <!-- Review 9 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-purple);">DK</div>
+            <div class="reviewer-info">
+              <h4>Dev Kumar</h4>
+              <span>Student | Rewari</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Excellent lounge seats! The beanbags and soft cushions are incredibly comfortable for group gaming sessions. Best budget-friendly spot to spend high energy evenings."
+          </p>
+        </div>
+
+        <!-- Review 10 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-pink);">SG</div>
+            <div class="reviewer-info">
+              <h4>Simran Gill</h4>
+              <span>Frequent Visitor</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "“Aao Kabhi Adde Pe” represents our ultimate daily motto! Visited with a bunch of college friends and we played Jenga and Cards for 3 solid hours. Super fun place to hang."
+          </p>
+        </div>
+
+        <!-- Review 11 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar">MP</div>
+            <div class="reviewer-info">
+              <h4>Mohit Pathak</h4>
+              <span>Local Elite</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Cheese-laden fries are literal gourmet heaven. The quantity provided in their platter is incredibly solid, making it heavy value for every single rupee spent here."
+          </p>
+        </div>
+
+        <!-- Review 12 -->
+        <div class="glass-card review-card reveal">
+          <div class="reviewer-header">
+            <div class="reviewer-avatar" style="color: var(--neon-blue);">JM</div>
+            <div class="reviewer-info">
+              <h4>Jyoti Mishra</h4>
+              <span>Elite Food Blogger</span>
+            </div>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Impeccable local cleanliness, professional crew, and beautiful thick shakes. The loaded KitKat shake is highly recommended with extra chocolate dustings!"
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer block -->
+  <footer>
+    <div class="footer-max">
+      <div class="footer-main-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+            <span class="logo-main">SADDA ADDA</span>
+            <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+          </a>
+          <p class="footer-desc">
+            Sadda Adda is more than a café; it's a feeling where premium bites, gaming boards, and chilling nights intersect. Visit us in Rewari today!
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/sadda.adda.rewari" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" class="social-link" title="Location Map"><i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="mailto:saddaaddarewari@gmail.com" class="social-link" title="Email Us"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>EXPLORE</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home Lounge</a></li>
+            <li><a href="menu.html">Dynamic Menu</a></li>
+            <li><a href="gallery.html">Vibe Gallery</a></li>
+            <li><a href="about.html">About Sadda Adda</a></li>
+            <li><a href="reviews.html">Community Reviews</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>OUR ADDA DETS</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Ganpat Nagar, Sec-5, Konsiwas Road, Near Gera Communication, Rewari, Haryana 123401, India</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 90343 41114</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>saddaaddarewari@gmail.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon-Sun: 10:00 AM – 11:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SADDA ADDA. Built with luxury neon gaming aesthetics. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Hangout</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

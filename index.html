@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SADDA ADDA | Premium Cafe & Gaming Lounge in Rewari</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- CDNs for Icons & Typography -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Ambient Looping Video Background -->
+  <div class="video-bg-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-drifting-neon-light-bokeh-34293-large.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- 1. Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-logo-container">
+      <div class="loader-logo">SADDA ADDA</div>
+      <div class="loader-tagline">“Aao Kabhi Adde Pe”</div>
+    </div>
+    <div class="loader-spinner">
+      <div class="loader-ring loader-ring-1"></div>
+      <div class="loader-ring loader-ring-2"></div>
+    </div>
+  </div>
+
+  <!-- 2. Custom Gaming Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="custom-cursor-follower"></div>
+
+  <!-- 3. Animated Background Blobs & Particles Canvas -->
+  <div class="bg-canvas">
+    <div class="neon-blob blob-purple"></div>
+    <div class="neon-blob blob-blue"></div>
+    <div class="neon-blob blob-pink"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- 4. Sticky Header Navbar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" id="logo-anchor" class="logo">
+        <span class="logo-main">SADDA ADDA</span>
+        <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" id="link-home" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" id="link-menu" class="nav-link">Menu</a></li>
+        <li><a href="gallery.html" id="link-gallery" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" id="link-about" class="nav-link">About Us</a></li>
+        <li><a href="reviews.html" id="link-reviews" class="nav-link">Reviews</a></li>
+        <li><a href="contact.html" id="link-contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Delivery Web Bucket Indicator -->
+        <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" id="cart-nav-btn" class="cart-trigger blink-glow" title="Order Online / Delivery Location">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="delivery-badge-dot"></span>
+        </a>
+
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div class="hamburger" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 5. Hero Showcase -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content reveal">
+        <div class="badge-gaming">
+          <i class="fa-solid fa-gamepad mr-2"></i> GAMING CAFE & HANGOUT ZONE
+        </div>
+        <h1 class="hero-title">
+          WELCOME TO<br>
+          <span class="typed-text" data-words='["SADDA ADDA", "NEON LOUNGE", "THE BURGER HUB"]'>SADDA ADDA</span><span class="typing-cursor">|</span>
+        </h1>
+        <div class="hero-tagline">“Aao Kabhi Adde Pe”</div>
+        <p class="hero-description">
+          Where rich cold coffee, premium sizzling burgers, overloaded cheese fries, heavy milkshakes, and unforgettable matches with friends come together. Located in Ganpat Nagar, Rewari!
+        </p>
+        <div class="hero-buttons">
+          <a href="menu.html" id="hero-btn-menu" class="btn btn-primary">
+            Explore Menu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="contact.html" id="hero-btn-visit" class="btn btn-secondary">
+            Visit Us <i data-lucide="map-pin" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="neon-ring-visual"></div>
+        <div class="neon-ring-visual-inner"></div>
+        <div class="hero-main-card">
+          <img src="images/hero_bg.jpg" alt="Sadda Adda Café Vibe" class="hero-image">
+          <div class="hero-card-tag">
+            <h4>SADDA ADDA REWARI</h4>
+            <p>Instagram-Worthy Gaming Ambiance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Featured Culinary Dishes -->
+  <section class="reveal">
+    <div class="section-max">
+      <div class="section-header">
+        <span class="section-subtitle">RECOMMENDED FROM OUR ADDA</span>
+        <h2 class="section-title">FEATURED <span>SIGNATURES</span></h2>
+      </div>
+
+      <div class="grid-4" id="featured-dishes-grid">
+        <!-- Dish 1 -->
+        <div class="dish-card" data-category="burgers">
+          <div class="dish-img-container">
+            <span class="dish-badge">Bestseller</span>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800" alt="Classic Veg Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Classic Veg Burger</h3>
+            <p class="dish-desc">Thick golden crisp potato patty with fresh red onion, salads and signature house spicy mayo.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹149</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="dish-card" data-category="fries">
+          <div class="dish-img-container">
+            <span class="dish-badge">Spicy Burst</span>
+            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=800" alt="Loaded Cheese Fries" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Loaded Cheese Fries</h3>
+            <p class="dish-desc">Golden crispy fries seasoned with peri-peri, blanketed under hot melted yellow cheddar cheese sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹139</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="dish-card" data-category="coffee">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cool Refresher</span>
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800" alt="Premium Cold Coffee" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Premium Cold Coffee</h3>
+            <p class="dish-desc">Velvety whipped dark espresso coffee blended smoothly with creamy whole milk and chocolate drizzle.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹119</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dish 4 -->
+        <div class="dish-card" data-category="shakes">
+          <div class="dish-img-container">
+            <span class="dish-badge">Premium Shake</span>
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=800" alt="Thick Oreo Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Thick Oreo Shake</h3>
+            <p class="dish-desc">Luscious thick dairy milkshake blended with sweet crunchy Oreo cookie crumbs and vanilla gelato.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹149</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="menu.html" class="btn btn-secondary" style="border-color: var(--neon-purple); box-shadow: 0 0 10px rgba(157,78,221,0.15)">
+          Discover Full Menu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WHY CHOOSE US -->
+  <section class="reveal">
+    <div class="section-max">
+      <div class="section-header">
+        <span class="section-subtitle">COOLEST GATHERING SPOT IN TOWN</span>
+        <h2 class="section-title">WHY CHOOSE <span>OUR ADDA?</span></h2>
+      </div>
+
+      <div class="grid-4" id="features-cards-grid">
+        <!-- Feature 1 -->
+        <div class="glass-card feat-card">
+          <div class="feat-icon-box">
+            <i class="fa-solid fa-pizza-slice"></i>
+          </div>
+          <h3 class="feat-title">Flavorful Eats</h3>
+          <p class="feat-desc">Handcrafted recipes using finest premium ingredients. Sizzling patties, creamy thick shakes and savory snacks designed for foodies.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card feat-card">
+          <div class="feat-icon-box" style="border-color: var(--neon-blue); color: var(--neon-blue);">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <h3 class="feat-title">Gaming Zone</h3>
+          <p class="feat-desc">Step into our immersive gaming ambiance illuminated by neon lights. Complete with board games, PS5 setups, and high-energy atmosphere.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card feat-card">
+          <div class="feat-icon-box" style="border-color: var(--neon-pink); color: var(--neon-pink);">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="feat-title">Lightning Service</h3>
+          <p class="feat-desc">No long waiting hours. Our active pro chefs cook snacks rapidly so you never lose match momentum while hanging out.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card feat-card">
+          <div class="feat-icon-box" style="border-color: var(--neon-yellow); color: var(--neon-yellow);">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+          </div>
+          <h3 class="feat-title">Affordable Slices</h3>
+          <p class="feat-desc">Top-notch quality mocktails and pocket-friendly rates suited perfectly for students. Amazing combos starting from small price points.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. INTEGRATE ONLINE ORDER / MAP ACTION: "PICKUP AND DELIVERY SERVICE" -->
+  <section class="reveal">
+    <div class="section-max">
+      <div class="pickup-delivery-card">
+        <h2 class="delivery-header-title">{pickup and delivery service}</h2>
+        <p class="delivery-p">
+          Craving some scrumptious Burger and Oreo Shake in Rewari? Connect with Sadda Adda instantly! You can order for lightning-fast self-collection / pickup at our outlet or request coordinates for home delivery services. Clicking below routes you straight to our official spot.
+        </p>
+        <div class="delivery-actions">
+          <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" 
+             target="_blank" rel="noopener noreferrer" class="btn-delivery btn-collection">
+            <i class="fa-solid fa-bag-shopping"></i> ORDER COLLECTION / PICKUP
+          </a>
+          <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" 
+             target="_blank" rel="noopener noreferrer" class="btn-delivery btn-dropoff">
+            <i class="fa-solid fa-truck-ramp-box"></i> ORDER HOME DELIVERY (REWARI CO)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. STORY TEASER -->
+  <section class="reveal">
+    <div class="section-max">
+      <div class="story-split">
+        <div class="story-visual-box">
+          <div class="story-glow-border"></div>
+          <div class="story-img-card">
+            <img src="images/interior_1.jpg" alt="Hangout Vibe" class="story-img">
+          </div>
+        </div>
+        <div class="story-content">
+          <span class="section-subtitle">OUR GENESIS STORY</span>
+          <h3>AN EXTRAORDINARY HANGOUT CALLED <span>SADDA ADDA</span></h3>
+          <p>
+            Sadda Adda started in Ganpat Nagar, Rewari, with a deep passion: to curate an exceptional neon-lit gaming space where pure delicious comfort food marries memorable conversations. It is where deep friendships are celebrated, high-score matches are achieved, and late-night cravings meet creamy shakes list. 
+          </p>
+          <p>
+            Whether you are here to challenge your gang in board games, take beautiful Instagram-worthy lounge selfies, or feast on crisp loaded nachos, Sadda Adda is your ultimate ultimate local neighborhood spot.
+          </p>
+          <a href="about.html" class="btn btn-primary">
+            Read Our Full Story <i data-lucide="book-open" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA PANEL -->
+  <section class="reveal">
+    <div class="section-max">
+      <div class="cta-banner">
+        <h2 class="cta-title">READY TO FUEL UP AT THE ADDA?</h2>
+        <p class="cta-desc">Experience Rewari's highly rated gaming cafe. Mouth watering cheesy burgers, ice cold frappes, PS5 battles and excellent youth visual vibes await you!</p>
+        <div class="hero-buttons" style="justify-content: center;">
+          <a href="menu.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--neon-blue) 0%, #0077b6 100%); box-shadow: 0 0 20px var(--neon-blue-glow)">
+            Order Online Now <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          </a>
+          <a href="contact.html" class="btn btn-secondary">
+            Get Directions <i data-lucide="navigation" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <footer>
+    <div class="footer-max">
+      <div class="footer-main-grid">
+        <!-- Col 1 -->
+        <div class="footer-about">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+            <span class="logo-main" style="font-size: 2.2rem;">SADDA ADDA</span>
+            <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+          </a>
+          <p class="footer-desc">
+            Sadda Adda is more than a café; it's a feeling where premium bites, gaming boards, and chilling nights intersect. Visit us in Rewari today!
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/sadda.adda.rewari" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" class="social-link" title="Location Map"><i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="mailto:saddaaddarewari@gmail.com" class="social-link" title="Email Us"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-links">
+          <h4>EXPLORE</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home Lounge</a></li>
+            <li><a href="menu.html">Dynamic Menu</a></li>
+            <li><a href="gallery.html">Vibe Gallery</a></li>
+            <li><a href="about.html">About Sadda Adda</a></li>
+            <li><a href="reviews.html">Community Reviews</a></li>
+            <li><a href="contact.html">Reach Sadda Adda</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-contact">
+          <h4>OUR ADDA DETS</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Ganpat Nagar, Sec-5, Konsiwas Road, Near Gera Communication, Rewari, Haryana 123401, India</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 90343 41114</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>saddaaddarewari@gmail.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon-Sun: 10:00 AM – 11:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SADDA ADDA. Built with luxury neon gaming aesthetics. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Hangout</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>

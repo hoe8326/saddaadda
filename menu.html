@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SADDA ADDA MENU | Premium Café Bites & Shakes in Rewari</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Ambient Looping Video Background -->
+  <div class="video-bg-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-slow-drifting-neon-light-bokeh-34293-large.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- 1. Premium Loader Screen -->
+  <div id="loader-screen">
+    <div class="loader-logo-container">
+      <div class="loader-logo">SADDA ADDA</div>
+      <div class="loader-tagline">“Aao Kabhi Adde Pe”</div>
+    </div>
+    <div class="loader-spinner">
+      <div class="loader-ring loader-ring-1"></div>
+      <div class="loader-ring loader-ring-2"></div>
+    </div>
+  </div>
+
+  <!-- 2. Custom Gaming Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="custom-cursor-follower"></div>
+
+  <!-- 3. Animated Background Blobs & Particles Canvas -->
+  <div class="bg-canvas">
+    <div class="neon-blob blob-purple"></div>
+    <div class="neon-blob blob-blue"></div>
+  </div>
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="page-transition-overlay"></div>
+
+  <!-- 4. Sticky Header Navbar -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-main">SADDA ADDA</span>
+        <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link active">Menu</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Delivery Web Bucket Indicator -->
+        <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" class="cart-trigger blink-glow" title="Order Online / Delivery Location">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="delivery-badge-dot"></span>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Title section -->
+  <section style="padding: 8rem 6% 3rem; text-align: center;">
+    <div class="section-max reveal active">
+      <span class="section-subtitle">FUEL FOR THE MIND & BEAST MODE</span>
+      <h1 class="section-title">THE <span>ADDA MENU</span></h1>
+      <p style="color: var(--text-muted); max-width:600px; margin: 1rem auto 0; font-size:1.05rem;">
+        Sourcing premium local ingredients to compose incredible fast food masterpieces. Check out our diverse shakes, fries, burgers, and caffeinated triggers below!
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Search, Filter Chips, Sort Controls -->
+  <section style="padding: 1rem 6% 3rem;">
+    <div class="section-max reveal active">
+      <div class="menu-controls">
+        <div class="search-input-wrapper">
+          <i data-lucide="search" class="search-icon w-5 h-5"></i>
+          <input type="text" id="menu-search" class="search-input" placeholder="Search mouthwatering burgers, pizza, pasta, shakes, Maggi...">
+        </div>
+        
+        <div class="sort-select-wrapper">
+          <span class="sort-label">Arrange:</span>
+          <select id="menu-sort" class="sort-select">
+            <option value="featured">Most Popular (Default)</option>
+            <option value="low-to-high">Price: Low to High</option>
+            <option value="high-to-low">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Categories filters list -->
+      <div class="gallery-filters" style="margin-bottom: 4rem;">
+        <button class="filter-btn menu-filter-btn active" data-filter="all">All Eats</button>
+        <button class="filter-btn menu-filter-btn" data-filter="pizza">Pizza</button>
+        <button class="filter-btn menu-filter-btn" data-filter="burgers">Burgers</button>
+        <button class="filter-btn menu-filter-btn" data-filter="pasta">Pasta</button>
+        <button class="filter-btn menu-filter-btn" data-filter="sandwich">Sandwiches</button>
+        <button class="filter-btn menu-filter-btn" data-filter="snacks">Snacks & Momos</button>
+        <button class="filter-btn menu-filter-btn" data-filter="maggi">Maggi</button>
+        <button class="filter-btn menu-filter-btn" data-filter="drinks">Chai & Coffee</button>
+        <button class="filter-btn menu-filter-btn" data-filter="beverages">Shakes</button>
+      </div>
+
+      <!-- Products Display grid containing real Sadda Adda bites -->
+      <div class="grid-4" id="products-grid">
+        
+        <!-- Category: Pizza -->
+        <div class="dish-card animate-hover" data-category="pizza" data-price="100" data-index="1">
+          <div class="dish-img-container">
+            <span class="dish-badge">Pizza Classics</span>
+            <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?q=80&w=600" alt="Margherita Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Margherita Pizza</h3>
+            <p class="dish-desc">Premium mozzarella cheese melted over our handmade classic herbed tomato sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹140 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="100" data-index="2">
+          <div class="dish-img-container">
+            <span class="dish-badge">Pizza Classics</span>
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600" alt="Onion Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Onion Pizza</h3>
+            <p class="dish-desc">Golden baked crust topped with red sweet onions and melting rich mozzarella.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹140 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="110" data-index="3">
+          <div class="dish-img-container">
+            <span class="dish-badge">Golden Corn</span>
+            <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=600" alt="Sweet Corn Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Sweet Corn Pizza</h3>
+            <p class="dish-desc">Sweet, juicy golden corn kernels baked perfectly with a thick cheese baseline.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹110 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹150 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="110" data-index="4">
+          <div class="dish-img-container">
+            <span class="dish-badge">Garden Fresh</span>
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=600" alt="Capsicum Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Capsicum Pizza</h3>
+            <p class="dish-desc">Crispy green capsicum peppers loaded with premium bubbling dairy cheese.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹110 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹150 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="130" data-index="5">
+          <div class="dish-img-container">
+            <span class="dish-badge">Tandoori Legend</span>
+            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=600" alt="Paneer Tikka Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Paneer Tikka Pizza</h3>
+            <p class="dish-desc">Smoky roasted paneer tikka cubes, spiced onions, and signature creamy sauces.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹130 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹170 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="140" data-index="6">
+          <div class="dish-img-container">
+            <span class="dish-badge">Extreme Cheese</span>
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=600" alt="Cheese Burst Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Cheese Burst Pizza</h3>
+            <p class="dish-desc">Double-decked crust bursting with rich liquid cheese in every hot slice.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹140 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹180 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pizza" data-price="140" data-index="7">
+          <div class="dish-img-container">
+            <span class="dish-badge">Chef's Signature</span>
+            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=600" alt="Sadda Adda Special Pizza" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Sadda Adda Special Pizza</h3>
+            <p class="dish-desc">An ultimate combo of juicy corn, paneer cubes, and our secret chef seasoning.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹140 <span class="text-xs text-muted">/ S</span> &nbsp;&bull;&nbsp; ₹180 <span class="text-xs text-muted">/ M</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Burger -->
+        <div class="dish-card animate-hover" data-category="burgers" data-price="50" data-index="8">
+          <div class="dish-img-container">
+            <span class="dish-badge">Burger Lounge</span>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600" alt="Aloo Tikki Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Aloo Tikki Burger</h3>
+            <p class="dish-desc">Crisp potato patty with fresh red onions and our daily signature house sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹50</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="60" data-index="9">
+          <div class="dish-img-container">
+            <span class="dish-badge">Burger Lounge</span>
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=600" alt="Aloo Tikki Supreme Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Aloo Tikki Supreme Burger</h3>
+            <p class="dish-desc">Spicy potato patty layered with sweet tomatoes, fresh lettuce, and heavy extra mayo.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹60</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="60" data-index="10">
+          <div class="dish-img-container">
+            <span class="dish-badge">Fiery Treat</span>
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=600" alt="Aloo Tikki Spicy Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Aloo Tikki Spicy Burger</h3>
+            <p class="dish-desc">Crisp potato patty infused with fiery chili oil dressing and golden garlic flakes.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹60</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="70" data-index="11">
+          <div class="dish-img-container">
+            <span class="dish-badge">Gourmet Corner</span>
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=600" alt="Paneer Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Paneer Burger</h3>
+            <p class="dish-desc">Thick golden panko-crusted cottage cheese paneer block with cooling mint mayo.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="70" data-index="12">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cheese Loaded</span>
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600" alt="Veg Cheese Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Veg Cheese Burger</h3>
+            <p class="dish-desc">Golden vegetable patty layered with a massive thick slab of melting cheddar cheese.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="80" data-index="13">
+          <div class="dish-img-container">
+            <span class="dish-badge">Monster Pack</span>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600" alt="Double Decker Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Double Decker Burger</h3>
+            <p class="dish-desc">Double crispy patties stacked high with melting cheese and creamy daily sauces.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="burgers" data-price="90" data-index="14">
+          <div class="dish-img-container">
+            <span class="dish-badge">Monster Pack</span>
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=600" alt="Double Decker Paneer Burger" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Double Decker Paneer Burger</h3>
+            <p class="dish-desc">Two massive crispy paneer patties with multiple cheese slices and fresh crisp salads.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹90</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Pasta -->
+        <div class="dish-card animate-hover" data-category="pasta" data-price="100" data-index="15">
+          <div class="dish-img-container">
+            <span class="dish-badge">Italian Flame</span>
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600" alt="Red Sauce Pasta" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Red Sauce Pasta</h3>
+            <p class="dish-desc">Fresh penne pasta cooked in robust spicy tomato arrabbiata herbal sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pasta" data-price="120" data-index="16">
+          <div class="dish-img-container">
+            <span class="dish-badge">Creamy Delight</span>
+            <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?q=80&w=600" alt="White Sauce Pasta" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">White Sauce Pasta</h3>
+            <p class="dish-desc">Silky, creamy penne pasta cooked in delicious rich buttery white cheese sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹120</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pasta" data-price="120" data-index="17">
+          <div class="dish-img-container">
+            <span class="dish-badge">Fusion Feast</span>
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=600" alt="Tandoori Pasta" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Tandoori Pasta</h3>
+            <p class="dish-desc">Aromatic fusion pasta tossed in smoky North Indian clay oven tandoori spices.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹120</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="pasta" data-price="120" data-index="18">
+          <div class="dish-img-container">
+            <span class="dish-badge">Chef's Mashup</span>
+            <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?q=80&w=600" alt="Mix Sauce Pasta" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Mix Sauce Pasta</h3>
+            <p class="dish-desc">Perfect fusion of creamy hot white sauce and robust spicy red tomato sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹120</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Sandwich -->
+        <div class="dish-card animate-hover" data-category="sandwich" data-price="80" data-index="19">
+          <div class="dish-img-container">
+            <span class="dish-badge">Toasty Toast</span>
+            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=600" alt="Cheese Sandwich" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Cheese Sandwich</h3>
+            <p class="dish-desc">Jumbo sliced bread stuffed with melted premium quality cheddar, toasted crisp.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="sandwich" data-price="90" data-index="20">
+          <div class="dish-img-container">
+            <span class="dish-badge">Paneer Feast</span>
+            <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?q=80&w=600" alt="Paneer Sandwich" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Paneer Sandwich</h3>
+            <p class="dish-desc">Crispy-grilled sandwich layers packed with spiced paneer cubes and green bell peppers.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹90</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Snacks & Momos -->
+        <div class="dish-card animate-hover" data-category="snacks" data-price="70" data-index="21">
+          <div class="dish-img-container">
+            <span class="dish-badge">Momos Special</span>
+            <img src="https://images.unsplash.com/photo-1625220194771-7ebedd0b4a2b?q=80&w=600" alt="Veg Momos" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Veg Momos</h3>
+            <p class="dish-desc">Steamed or fried vegetable dumplings served with authentic fiery hot chili chutney.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70 <span class="text-xs text-muted">(Steamed / Fried)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="snacks" data-price="90" data-index="22">
+          <div class="dish-img-container">
+            <span class="dish-badge">Momos Special</span>
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600" alt="Paneer Momos" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Paneer Momos</h3>
+            <p class="dish-desc">Savory dumplings filled with spiced grated paneer, served with spicy garlic dip.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹90 <span class="text-xs text-muted">(Steamed / Fried)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="snacks" data-price="50" data-index="23">
+          <div class="dish-img-container">
+            <span class="dish-badge">Sides</span>
+            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=600" alt="French Fries (Small)" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">French Fries (Small)</h3>
+            <p class="dish-desc">Classic hand-cut thin skin-on potatoes, fried to a perfect golden crisp and seasoned with pure sea salt crystals.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹50</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="snacks" data-price="90" data-index="24">
+          <div class="dish-img-container">
+            <span class="dish-badge">Sides</span>
+            <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?q=80&w=600" alt="French Fries (Large)" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">French Fries (Large)</h3>
+            <p class="dish-desc">An extra large, generous double share portion of golden french fries seasoned with classic sea salt flakes.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹90</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Maggi -->
+        <div class="dish-card animate-hover" data-category="maggi" data-price="60" data-index="25">
+          <div class="dish-img-container">
+            <span class="dish-badge">Maggi Lounge</span>
+            <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?q=80&w=600" alt="Veggie Maggi" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Veggie Maggi</h3>
+            <p class="dish-desc">Wok-cooked Indian masala noodles prepared with fresh, crunchy garden veggies.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹60</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="maggi" data-price="70" data-index="26">
+          <div class="dish-img-container">
+            <span class="dish-badge">Paneer Fusion</span>
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=600" alt="Paneer Maggi" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Paneer Maggi</h3>
+            <p class="dish-desc">Comforting Indian masala noodles loaded with pan-roasted paneer tikka chunks.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="maggi" data-price="80" data-index="27">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cheese Burst</span>
+            <img src="https://images.unsplash.com/photo-1613769049987-b31b7f0f24b0?q=80&w=600" alt="Cheesy Maggi" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Cheesy Maggi</h3>
+            <p class="dish-desc">Steaming hot masala noodles coated under a blanket of rich melting cheddar cheese.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="maggi" data-price="100" data-index="28">
+          <div class="dish-img-container">
+            <span class="dish-badge">Adda Signature</span>
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=600" alt="Sadda Adda Special Maggi" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Sadda Adda Special Maggi</h3>
+            <p class="dish-desc">Premium bowl packed with roasted paneer, sweet corn, double cheese, and secret spices.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Chai & Coffee -->
+        <div class="dish-card animate-hover" data-category="drinks" data-price="20" data-index="29">
+          <div class="dish-img-container">
+            <span class="dish-badge">Hot Tea</span>
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600" alt="Kulhad Wali Chai" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Kulhad Wali Chai</h3>
+            <p class="dish-desc">Aromatic brewed ginger cardamon milk tea served in traditional soil mud cups.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹20</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="drinks" data-price="30" data-index="30">
+          <div class="dish-img-container">
+            <span class="dish-badge">Hot Coffee</span>
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600" alt="Classic Hot Coffee" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Classic Hot Coffee</h3>
+            <p class="dish-desc">Frothy whipped espresso blended beautifully with warm creamy whole milk base.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹30</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="drinks" data-price="50" data-index="31">
+          <div class="dish-img-container">
+            <span class="dish-badge">Hot Coffee</span>
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=600" alt="Premium Hot Coffee" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Premium Hot Coffee</h3>
+            <p class="dish-desc">Choose from premium Colombian, sweet Butter Scotch, French Vanilla or Hazelnut flavors.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹50 <span class="text-xs text-muted">(Vanilla / Scotch / Colombian / Hazelnut)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="drinks" data-price="80" data-index="32">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cold Coffee</span>
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600" alt="Classic Cold Coffee" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Classic Cold Coffee</h3>
+            <p class="dish-desc">Ice-cold dark espresso blended with rich creamy milk and chocolate sauce.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="drinks" data-price="100" data-index="33">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cold Coffee</span>
+            <img src="https://images.unsplash.com/photo-1572286258217-402423106274?q=80&w=600" alt="Premium Cold Coffee" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Premium Cold Coffee</h3>
+            <p class="dish-desc">Ice-cold blended coffee in hazelnut, butter scotch, vanilla, or Colombian flavors.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Beverages & Shakes -->
+        <div class="dish-card animate-hover" data-category="beverages" data-price="70" data-index="34">
+          <div class="dish-img-container">
+            <span class="dish-badge">Dairy Shake</span>
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600" alt="Vanilla Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Vanilla Shake</h3>
+            <p class="dish-desc">Creamy vanilla ice cream churned with rich milk for a classic thick treat.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="70" data-index="35">
+          <div class="dish-img-container">
+            <span class="dish-badge">Dairy Shake</span>
+            <img src="https://images.unsplash.com/photo-1553787499-6f9133860278?q=80&w=600" alt="Strawberry Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Strawberry Shake</h3>
+            <p class="dish-desc">Sweet berry milkshake blended with luscious strawberry gelato and cooling milk.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="70" data-index="36">
+          <div class="dish-img-container">
+            <span class="dish-badge">Dairy Shake</span>
+            <img src="https://images.unsplash.com/photo-1553787499-6f9133860278?q=80&w=600" alt="Banana Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Banana Shake</h3>
+            <p class="dish-desc">Naturally sweet and healthy energy booster made with golden bananas and milk.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹70 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="80" data-index="37">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cocoa Premium</span>
+            <img src="https://images.unsplash.com/photo-1600718374662-0483d2b9da44?q=80&w=600" alt="Chocolate Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Chocolate Shake</h3>
+            <p class="dish-desc">Belgian cocoa blended with rich whole milk and gourmet chocolate syrup.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="80" data-index="38">
+          <div class="dish-img-container">
+            <span class="dish-badge">Cocoa Premium</span>
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600" alt="Butter Scotch Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Butter Scotch Shake</h3>
+            <p class="dish-desc">Sweet golden caramel and butter scotch crunch blended into a velvety base.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹80 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="100" data-index="39">
+          <div class="dish-img-container">
+            <span class="dish-badge">Oreo Treat</span>
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=600" alt="Oreo Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Oreo Shake</h3>
+            <p class="dish-desc">Creamy thick milkshake loaded with crunchy chocolate Oreo cookie pieces.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card animate-hover" data-category="beverages" data-price="100" data-index="40">
+          <div class="dish-img-container">
+            <span class="dish-badge">Kitkat Treat</span>
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?q=80&w=600" alt="Kitkat Shake" class="dish-img" loading="lazy">
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-title">Kitkat Shake</h3>
+            <p class="dish-desc">Gourmet rich shake mixed with actual crispy KitKat bars and chocolate waffle bits.</p>
+            <div class="dish-footer-normal">
+              <span class="dish-price">₹100 <span class="text-xs text-muted">(+₹20 for Ice Cream)</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer block -->
+  <footer>
+    <div class="footer-max">
+      <div class="footer-main-grid">
+        <div class="footer-about">
+          <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+            <span class="logo-main">SADDA ADDA</span>
+            <span class="logo-sub">“AAO KABHI ADDE PE”</span>
+          </a>
+          <p class="footer-desc">
+            Sadda Adda is more than a café; it's a feeling where premium bites, gaming boards, and chilling nights intersect. Visit us in Rewari today!
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/sadda.adda.rewari" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.google.com/maps/place/sadda+adda+rewari/data=!4m2!3m1!1s0x390d51fb663a0035:0xaf1650fce3f54ca2?sa=X" target="_blank" rel="noopener noreferrer" class="social-link" title="Location Map"><i class="fa-solid fa-map-location-dot"></i></a>
+            <a href="mailto:saddaaddarewari@gmail.com" class="social-link" title="Email Us"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>EXPLORE</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home Lounge</a></li>
+            <li><a href="menu.html">Dynamic Menu</a></li>
+            <li><a href="gallery.html">Vibe Gallery</a></li>
+            <li><a href="about.html">About Sadda Adda</a></li>
+            <li><a href="reviews.html">Community Reviews</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>OUR ADDA DETS</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Ganpat Nagar, Sec-5, Konsiwas Road, Near Gera Communication, Rewari, Haryana 123401, India</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 90343 41114</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>saddaaddarewari@gmail.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon-Sun: 10:00 AM – 11:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SADDA ADDA. Built with luxury neon gaming aesthetics. All Rights Reserved.</p>
+        <div class="copyright-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Hangout</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Sadda Adda Café",
+  "description": "A premium static multi-page café website with a luxury dark neon theme, interactive custom cursor, gaming lounge aesthetics, dynamic typing elements, and integrated shopping cart system for Sadda Adda in Rewari, Haryana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
